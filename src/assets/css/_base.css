@@ -1,0 +1,61 @@
+@import "_fonts.css";
+
+:root {
+  --color-error: #FF7979;
+  --color-primary: #77E2B3;
+  --color-accent: #5E54A4;
+  --color-dark: #3D3B48;
+  --color-dark-tint: #BAB7D4;
+  --color-light: #FFFFFF;
+  --color-light-shade: #DEDEDE;
+
+  --text-sans: Poppins, Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+
+  --text-regular: 400;
+  --text-medium: 500;
+  --text-semibold: 600;
+  --text-bold: 700;
+
+  --text-xs: 11px;
+  --text-s-2: 14px;
+  --text-s-1: 15px;
+  --text-s: 16px;
+  --text-l: var(--fluid-28-50);
+
+  --leading-default: 26px;
+  --leading-bigtext: var(--fluid-36-55);
+  --leading-smalltext: var(--fluid-21-26);
+
+  --tracking-tight: calc(-1 * var(--fluid-0\.29-0\.52));
+  --tracking-p25: 0.25px;
+  --tracking-p27: 0.27px;
+  --tracking-s: 1px;
+
+  --space-3xs: 6px;
+  --space-2xs: 8px;
+  --space-xs: 11px;
+  --space-s-1: 15px;
+  --space-s: 16px;
+  --space-s1: 17px;
+  --space-s2: 18px;
+  --space-m: 20px;
+  --space-l: 24px;
+  --space-xl: 32px;
+  --space-2xl: 40px;
+  --space-3xl: 45px;
+  --space-4xl: 64px;
+
+  /* Fluid values */
+  /* @link https://utopia.fyi/clamp/calculator?a=375,1440,0.29—0.52 */
+  --fluid-0\.29-0\.52: clamp(0.0181rem, 0.0131rem + 0.0216vi, 0.0325rem);
+  /* @link https://utopia.fyi/clamp/calculator?a=375,1440,21—26 */
+  --fluid-21-26: clamp(1.3125rem, 1.2025rem + 0.4695vi, 1.625rem);
+  /* @link https://utopia.fyi/clamp/calculator?a=375,1440,28—50 */
+  --fluid-28-50: clamp(1.75rem, 1.2658rem + 2.0657vi, 3.125rem);
+  /* @link https://utopia.fyi/clamp/calculator?a=375,1440,36—55 */
+  --fluid-36-55: clamp(2.25rem, 1.8319rem + 1.784vi, 3.4375rem);
+}
+
+html {
+  font-family: var(--text-sans);
+}

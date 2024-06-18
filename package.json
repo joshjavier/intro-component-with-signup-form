@@ -10,5 +10,8 @@
   "license": "MIT",
   "dependencies": {
     "@11ty/eleventy": "3.0.0-alpha.13"
+  },
+  "devDependencies": {
+    "lightningcss": "^1.25.1"
   }
 }
