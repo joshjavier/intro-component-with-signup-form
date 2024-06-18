@@ -1,5 +1,5 @@
 import path from "node:path";
-import { bundle } from "lightningcss"
+import { bundleAsync } from "lightningcss"
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default function (eleventyConfig) {
@@ -7,9 +7,9 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addExtension('css', {
     outputFileExtension: 'css',
-    compile: async (inputContent, inputPath) => {
+    async compile(inputContent, inputPath) {
       let parsed = path.parse(inputPath)
-      let filename = parsed.base
+      let filename = parsed.name
       let baseDir = path.basename(parsed.dir)
       // Do not generate CSS if a file is named with a leading underscore
       // or if it is inside a directory named with a leading underscore.
@@ -17,9 +17,20 @@ export default function (eleventyConfig) {
         return undefined
       }
 
-      let result = bundle({
-        filename: inputPath
+      let imports = []
+      let result = await bundleAsync({
+        filename: inputPath,
+        resolver: {
+          resolve(specifier, from) {
+            const importPath = path.resolve(path.dirname(from), specifier)
+            imports.push(importPath)
+            return importPath
+          }
+        }
       })
+
+      // Register imports as dependencies for incremental builds
+      this.addDependencies(inputPath, imports)
 
       return async () => {
         return result.code.toString()
