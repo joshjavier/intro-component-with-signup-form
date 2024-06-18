@@ -17,27 +17,43 @@
   </style>
 </head>
 <body>
+  <main>
+    <h1>Learn to code by watching others</h1>
+    <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.</p>
 
-  Learn to code by watching others
+    <p><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
 
-  See how experienced developers solve problems in real-time. Watching scripted tutorials is great,
-  but understanding how developers think is invaluable.
+    <form>
+      <p class="field">
+        <label for="firstName">First Name</label>
+        <input type="text" name="firstName" id="firstName" autocomplete="given-name" aria-required="true">
+      </p>
 
-  Try it free 7 days then $20/mo. thereafter
+      <p class="field">
+        <label for="lastName">Last Name</label>
+        <input type="text" name="lastName" id="lastName" autocomplete="family-name" aria-required="true">
+      </p>
 
-  First Name
-  Last Name
-  Email Address
-  Password
+      <p class="field">
+        <label for="Email">Email Address</label>
+        <input type="email" name="email" id="email" autocomplete="email" aria-required="true">
+      </p>
 
-  Claim your free trial
+      <p class="field">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" aria-required="true">
+      </p>
 
-  By clicking the button, you are agreeing to our Terms and Services
+      <button type="submit" aria-describedby="disclaimer">Claim your free trial</button>
 
-  <footer>
+      <p class="disclaimer"><small>By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></small></p>
+    </form>
+  </main>
+
+  <footer hidden>
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="https://www.frontendmentor.io/profile/joshjavier">Josh Javier</a>.
     </p>
   </footer>
 </body>
