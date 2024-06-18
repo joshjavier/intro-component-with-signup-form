@@ -12,8 +12,21 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .card:has(form) {
+      max-width: 540px;
+      flex-direction: column;
+      padding: var(--space-2xl);
+    }
+
+    .card form {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-m);
+    }
+
+    form + .disclaimer {
+      margin-top: var(--space-2xs);
+    }
   </style>
 </head>
 <body>
@@ -21,33 +34,63 @@
     <h1>Learn to code by watching others</h1>
     <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.</p>
 
-    <p><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
+    <div class="card" style="--color-bg: var(--color-accent); --color-text: #fff; --tracking: var(--tracking-p27);">
+      <p><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
+    </div>
 
-    <form>
-      <p class="field">
-        <label for="firstName">First Name</label>
-        <input type="text" name="firstName" id="firstName" autocomplete="given-name" aria-required="true">
-      </p>
-
-      <p class="field">
-        <label for="lastName">Last Name</label>
-        <input type="text" name="lastName" id="lastName" autocomplete="family-name" aria-required="true">
-      </p>
-
-      <p class="field">
-        <label for="Email">Email Address</label>
-        <input type="email" name="email" id="email" autocomplete="email" aria-required="true">
-      </p>
-
-      <p class="field">
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" aria-required="true">
-      </p>
-
-      <button type="submit" aria-describedby="disclaimer">Claim your free trial</button>
-
-      <p class="disclaimer"><small>By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></small></p>
-    </form>
+    <div class="card">
+      <form>
+        <p class="field">
+          <input
+            type="text"
+            name="firstName"
+            id="firstName"
+            autocomplete="given-name"
+            aria-required="true"
+            aria-label="First Name"
+            placeholder="First Name"
+          >
+          <span id="firstNameError" class="error" aria-live="assertive"></span>
+        </p>
+        <p class="field">
+          <input
+            type="text"
+            name="lastName"
+            id="lastName"
+            autocomplete="family-name"
+            aria-required="true"
+            aria-label="Last Name"
+            placeholder="Last Name"
+          >
+          <span id="lastNameError" class="error" aria-live="assertive"></span>
+        </p>
+        <p class="field">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            autocomplete="email"
+            aria-required="true"
+            aria-label="Email Address"
+            placeholder="Email Address"
+          >
+          <span id="emailError" class="error" aria-live="assertive"></span>
+        </p>
+        <p class="field">
+          <input
+            type="password"
+            name="password"
+            id="password"
+            aria-required="true"
+            aria-label="Password"
+            placeholder="Password"
+          >
+          <span id="passwordError" class="error" aria-live="assertive"></span>
+        </p>
+        <button class="button" type="submit" aria-describedby="disclaimer">Claim your free trial</button>
+      </form>
+      <p id="disclaimer" class="disclaimer"><small>By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></small></p>
+    </div>
   </main>
 
   <footer hidden>

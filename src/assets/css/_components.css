@@ -1,0 +1,59 @@
+@import "_form.css";
+
+.button {
+  border-radius: 10px;
+  border: 1px solid transparent;
+  padding: var(--padding, var(--space-s-1));
+  background-color: var(--color-bg, var(--color-primary));
+  color: var(--color-text, var(--color-light));
+  font-weight: var(--text-semibold);
+  letter-spacing: var(--tracking-s);
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: inset 0 -4px 0 0 rgb(0 0 0 / 9.09%);
+}
+
+@media (hover: hover) {
+  .button:hover {
+    background-color: color-mix(in srgb, #000 20%, var(--color-primary));
+    transition: background-color 0.2s;
+  }
+}
+
+.card {
+  border-radius: 10px;
+  padding: var(--padding, var(--space-s1));
+  background-color: var(--color-bg, var(--color-light));
+  color: var(--color-text, var(--color-dark));
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 8px 0 0 rgb(0 0 0 / 14.69%);
+  font-size: var(--text-size, var(--text-s-1));
+  letter-spacing: var(--tracking);
+}
+
+.card > :first-child {
+  margin: 0;
+}
+
+.disclaimer {
+  color: var(--color-text, var(--color-dark-tint));
+  text-align: center;
+}
+
+.disclaimer :where(small) {
+  font-size: var(--text-xs);
+  font-weight: var(--text-medium);
+}
+
+.disclaimer :where(a) {
+  text-decoration: none;
+  font-weight: var(--text-bold);
+  color: var(--color-tomato);
+}
+
+@media (hover: hover) {
+  .disclaimer :where(a):hover {
+    text-decoration: underline;
+  }
+}

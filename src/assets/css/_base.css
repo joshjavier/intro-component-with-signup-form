@@ -2,7 +2,7 @@
 @import "_fonts.css";
 
 :root {
-  --color-error: #FF7979;
+  --color-tomato: #FF7979;
   --color-primary: #77E2B3;
   --color-accent: #5E54A4;
   --color-dark: #3D3B48;
@@ -46,6 +46,8 @@
   --space-3xl: 45px;
   --space-4xl: 64px;
 
+  --measure: 60ch;
+
   /* Fluid values */
   /* @link https://utopia.fyi/clamp/calculator?a=375,1440,0.29—0.52 */
   --fluid-0\.29-0\.52: clamp(0.0181rem, 0.0131rem + 0.0216vi, 0.0325rem);
@@ -59,4 +61,33 @@
 
 html {
   font-family: var(--text-sans);
+  }
+
+body {
+  background-color: var(--color-sheet, var(--color-tomato));
+  color: var(--color-text, var(--color-light));
+  line-height: var(--leading-default);
+}
+
+:where(p, h1, h2, h3, h4, h5, h6, li) {
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+h1 {
+  font-size: var(--text-l);
+  font-weight: var(--text-bold);
+  line-height: var(--leading-bigtext);
+  letter-spacing: var(--tracking-tight);
+}
+
+h1 + p {
+  font-size: var(--text-s);
+  font-weight: var(--text-medium);
+  margin-top: var(--space-xs);
+}
+
+:focus-visible {
+  outline: 6px double black;
+  box-shadow: 0 0 0 4px white;
 }
