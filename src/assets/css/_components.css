@@ -30,6 +30,7 @@
   box-shadow: 0 8px 0 0 rgb(0 0 0 / 14.69%);
   font-size: var(--text-size, var(--text-s-1));
   letter-spacing: var(--tracking);
+  text-align: var(--text-align);
 }
 
 .disclaimer {

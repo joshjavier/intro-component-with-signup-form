@@ -8,6 +8,7 @@ input[type="password"] {
   font-weight: var(--text-semibold);
   letter-spacing: var(--tracking-p25);
   color: var(--color-dark);
+  width: 100%;
 }
 
 input[type="text"]:hover,
