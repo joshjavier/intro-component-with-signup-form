@@ -69,9 +69,18 @@ html {
 
 body {
   background-color: var(--color-sheet, var(--color-tomato));
+  background-image: url('/assets/images/bg-intro-desktop.png');
+  background-position: center;
+  background-size: cover;
   color: var(--color-text, var(--color-light));
   line-height: var(--leading-default);
   margin: 0;
+}
+
+@media (max-width: 375px) {
+  body {
+    background-image: url('/assets/images/bg-intro-mobile.png');
+  }
 }
 
 main {
