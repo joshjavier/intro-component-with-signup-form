@@ -35,6 +35,21 @@ input[type="password"][aria-invalid] {
   gap: var(--space-3xs);
 }
 
+.input-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.input-wrapper:has([aria-invalid])::after {
+  content: url('/assets/images/icon-error.svg');
+  position: absolute;
+  right: 27px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+}
+
 /* Errors */
 .error {
   font-weight: var(--text-medium);
