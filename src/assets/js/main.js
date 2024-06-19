@@ -1,16 +1,10 @@
 import * as v from 'valibot'
-import {
-  FirstNameSchema,
-  LastNameSchema,
-  PasswordSchema,
-  EmailSchema,
-  FormSchema
-} from "./_schema";
+import { FormSchema } from "./_schema";
 
 /** @type {HTMLFormElement} */
 const form = document.querySelector('form')
 /** @type {string[]} */
-const formFields = Object.keys(form.elements).slice(form.elements.length)
+const formFields = [...form.elements].map(el => el.name).filter(name => name !== '')
 
 /**
  * Binds instant and afterward validations to a field
