@@ -1,8 +1,9 @@
+@import "_reset.css";
 @import "_fonts.css";
 
 :root {
-  --color-error: #FF7979;
-  --color-primary: #77E2B3;
+  --color-tomato: #FF7979;
+  --color-primary: #38CC8B;
   --color-accent: #5E54A4;
   --color-dark: #3D3B48;
   --color-dark-tint: #BAB7D4;
@@ -45,11 +46,17 @@
   --space-3xl: 45px;
   --space-4xl: 64px;
 
+  --measure: 60ch;
+
   /* Fluid values */
   /* @link https://utopia.fyi/clamp/calculator?a=375,1440,0.29—0.52 */
   --fluid-0\.29-0\.52: clamp(0.0181rem, 0.0131rem + 0.0216vi, 0.0325rem);
   /* @link https://utopia.fyi/clamp/calculator?a=375,1440,21—26 */
   --fluid-21-26: clamp(1.3125rem, 1.2025rem + 0.4695vi, 1.625rem);
+  /* @link https://utopia.fyi/clamp/calculator?a=375,1157,24—32 */
+  --fluid-24-32: clamp(1.5rem, 1.2602rem + 1.023vi, 2rem);
+  /* @link https://utopia.fyi/clamp/calculator?a=375,607,24—40 */
+  --fluid-24-40: clamp(1.5rem, -0.1164rem + 6.8966vi, 2.5rem);
   /* @link https://utopia.fyi/clamp/calculator?a=375,1440,28—50 */
   --fluid-28-50: clamp(1.75rem, 1.2658rem + 2.0657vi, 3.125rem);
   /* @link https://utopia.fyi/clamp/calculator?a=375,1440,36—55 */
@@ -58,4 +65,43 @@
 
 html {
   font-family: var(--text-sans);
+  }
+
+body {
+  background-color: var(--color-sheet, var(--color-tomato));
+  color: var(--color-text, var(--color-light));
+  line-height: var(--leading-default);
+  margin: 0;
+}
+
+main {
+  padding: 88px var(--space-l);
+  min-height: 100vh;
+}
+
+:where(p, h1, h2, h3, h4, h5, h6, li) {
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+h1 {
+  font-size: var(--text-l);
+  font-weight: var(--text-bold);
+  line-height: var(--leading-bigtext);
+  letter-spacing: var(--tracking-tight);
+}
+
+h1 + p {
+  font-size: var(--text-s);
+  font-weight: var(--text-medium);
+  margin-top: var(--fluid-24-32);
+}
+
+:first-child {
+  margin-top: 0;
+}
+
+:focus-visible {
+  outline: 6px double black;
+  box-shadow: 0 0 0 4px white;
 }

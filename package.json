@@ -9,9 +9,11 @@
   "author": "Josh Javier",
   "license": "MIT",
   "dependencies": {
-    "@11ty/eleventy": "3.0.0-alpha.13"
+    "@11ty/eleventy": "3.0.0-alpha.13",
+    "valibot": "^0.33.1"
   },
   "devDependencies": {
+    "esbuild": "0.21.5",
     "lightningcss": "^1.25.1"
   }
 }

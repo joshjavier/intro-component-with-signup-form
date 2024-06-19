@@ -1,0 +1,49 @@
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  border-radius: 5px;
+  border: 1px solid var(--color-light-shade);
+  padding: var(--space-s-1) var(--space-xl);
+  font-size: var(--text-s-2);
+  font-weight: var(--text-semibold);
+  letter-spacing: var(--tracking-p25);
+  color: var(--color-dark);
+  width: 100%;
+}
+
+input[type="text"]:hover,
+input[type="text"]:focus,
+input[type="email"]:hover,
+input[type="email"]:focus,
+input[type="password"]:hover,
+input[type="password"]:focus {
+  border-color: var(--color-accent);
+}
+
+input[type="text"][aria-invalid],
+input[type="email"][aria-invalid],
+input[type="password"][aria-invalid] {
+  border-width: 2px;
+  border-color: var(--color-tomato);
+}
+
+.field {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: var(--space-3xs);
+}
+
+/* Errors */
+.error {
+  font-weight: var(--text-medium);
+  font-style: italic;
+  font-size: var(--text-xs);
+  color: var(--color-tomato);
+  line-height: normal;
+}
+
+.error:empty {
+  display: none;
+}
