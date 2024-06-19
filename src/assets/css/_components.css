@@ -26,24 +26,26 @@
   background-color: var(--color-bg, var(--color-light));
   color: var(--color-text, var(--color-dark));
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   box-shadow: 0 8px 0 0 rgb(0 0 0 / 14.69%);
   font-size: var(--text-size, var(--text-s-1));
   letter-spacing: var(--tracking);
 }
 
-.card > :first-child {
-  margin: 0;
-}
-
 .disclaimer {
   color: var(--color-text, var(--color-dark-tint));
   text-align: center;
+  line-height: var(--leading-smalltext);
+  font-size: var(--text-xs);
+  font-weight: var(--text-medium);
+}
+
+.disclaimer :where(p) {
+  max-width: unset;
 }
 
 .disclaimer :where(small) {
-  font-size: var(--text-xs);
-  font-weight: var(--text-medium);
+  font-size: inherit;
 }
 
 .disclaimer :where(a) {

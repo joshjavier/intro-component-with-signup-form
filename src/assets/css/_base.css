@@ -3,7 +3,7 @@
 
 :root {
   --color-tomato: #FF7979;
-  --color-primary: #77E2B3;
+  --color-primary: #38CC8B;
   --color-accent: #5E54A4;
   --color-dark: #3D3B48;
   --color-dark-tint: #BAB7D4;
@@ -85,6 +85,10 @@ h1 + p {
   font-size: var(--text-s);
   font-weight: var(--text-medium);
   margin-top: var(--space-xs);
+}
+
+:first-child {
+  margin-top: 0;
 }
 
 :focus-visible {

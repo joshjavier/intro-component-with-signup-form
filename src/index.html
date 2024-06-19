@@ -14,7 +14,6 @@
   <style>
     .card:has(form) {
       max-width: 540px;
-      flex-direction: column;
       padding: var(--space-2xl);
     }
 
@@ -89,7 +88,9 @@
         </p>
         <button class="button" type="submit" aria-describedby="disclaimer">Claim your free trial</button>
       </form>
-      <p id="disclaimer" class="disclaimer"><small>By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></small></p>
+      <div id="disclaimer" class="disclaimer">
+        <p><small>By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></small></p>
+      </div>
     </div>
   </main>
 
