@@ -55,7 +55,7 @@ input[type="password"][aria-invalid] {
   font-weight: var(--text-medium);
   font-style: italic;
   font-size: var(--text-xs);
-  color: var(--color-tomato);
+  color: color-mix(in srgb, #000 30%, var(--color-tomato));
   line-height: normal;
 }
 
