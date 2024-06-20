@@ -55,7 +55,7 @@
     }
 
     form + .disclaimer {
-      margin-top: var(--space-2xs);
+      margin-top: 12px;
     }
   </style>
 </head>
@@ -76,52 +76,65 @@
         <div class="card">
           <form>
             <p class="field">
-              <input
-                type="text"
-                name="firstName"
-                id="firstName"
-                autocomplete="given-name"
-                aria-required="true"
-                aria-label="First Name"
-                placeholder="First Name"
-              >
+              <span class="input-wrapper">
+                <input
+                  type="text"
+                  name="firstName"
+                  id="firstName"
+                  autocomplete="given-name"
+                  aria-required="true"
+                  aria-label="First Name"
+                  aria-describedby="firstNameError"
+                  placeholder="First Name"
+                >
+              </span>
               <span id="firstNameError" class="error" aria-live="assertive"></span>
             </p>
             <p class="field">
-              <input
-                type="text"
-                name="lastName"
-                id="lastName"
-                autocomplete="family-name"
-                aria-required="true"
-                aria-label="Last Name"
-                placeholder="Last Name"
-              >
+              <span class="input-wrapper">
+                <input
+                  type="text"
+                  name="lastName"
+                  id="lastName"
+                  autocomplete="family-name"
+                  aria-required="true"
+                  aria-label="Last Name"
+                  aria-describedby="lastNameError"
+                  placeholder="Last Name"
+                >
+              </span>
               <span id="lastNameError" class="error" aria-live="assertive"></span>
             </p>
             <p class="field">
-              <input
-                type="email"
-                name="email"
-                id="email"
-                autocomplete="email"
-                aria-required="true"
-                aria-label="Email Address"
-                placeholder="Email Address"
-              >
+              <span class="input-wrapper">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  autocomplete="email"
+                  aria-required="true"
+                  aria-label="Email Address"
+                  aria-describedby="emailError"
+                  placeholder="Email Address"
+                >
+              </span>
               <span id="emailError" class="error" aria-live="assertive"></span>
             </p>
             <p class="field">
-              <input
-                type="password"
-                name="password"
-                id="password"
-                aria-required="true"
-                aria-label="Password"
-                placeholder="Password"
-              >
+              <span class="input-wrapper">
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  aria-required="true"
+                  aria-label="Password"
+                  aria-describedby="passwordError"
+                  placeholder="Password"
+                >
+              </span>
               <span id="passwordError" class="error" aria-live="assertive"></span>
             </p>
+            <div class="error-summary error visually-hidden" aria-live="assertive"></div>
             <button class="button" type="submit" aria-describedby="disclaimer">Claim your free trial</button>
           </form>
           <div id="disclaimer" class="disclaimer">

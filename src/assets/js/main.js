@@ -5,6 +5,8 @@ import { FormSchema } from "./_schema";
 const form = document.querySelector('form')
 /** @type {string[]} */
 const formFields = [...form.elements].map(el => el.name).filter(name => name !== '')
+/** @type {HTMLElement} */
+const errorSummary = document.querySelector('.error-summary')
 
 /**
  * Binds instant and afterward validations to a field
@@ -94,16 +96,25 @@ form.addEventListener('submit', event => {
 
   const result = v.safeParse(FormSchema, formData, { abortPipeEarly: true })
 
-  if (result.issues) {
+  // Success case
+  if (!result.issues) {
+    console.log('Success!')
+    errorSummary.textContent = 'Thank you for signing up!'
+
+  // If there's only one invalid field, show the error indicators and
+  // announce the corresponding error message as usual
+  } else if (result.issues.length === 1) {
+    const field = result.issues[0].path[0].key
+    const errorMessage = result.issues[0].message
+    updateFieldDOM(form.elements[field], false, errorMessage, { live: true })
+
+  // If there's more than one invalid field, show the error indicators but
+  // announce only the error summary
+  } else if (result.issues.length > 1) {
     result.issues.forEach(issue => {
       const el = form.elements[issue.path[0].key]
-
-      // TODO: if there are multiple errors, remove the `live` option
-      // and instead announce the number of fields with error on a
-      // visually hidden live region
-      updateFieldDOM(el, false, issue.message, { live: true })
+      updateFieldDOM(el, false, issue.message)
     })
-  } else {
-    // Success!
+    errorSummary.textContent = `Failed to submit because ${result.issues.length} fields are invalid.`
   }
 })
