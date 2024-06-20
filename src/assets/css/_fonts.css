@@ -1,0 +1,15 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 100 900;
+  src: url('/assets/fonts/Poppins-VariableFont_wght.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 100 900;
+  src: url('/assets/fonts/Poppins-Italic-VariableFont_wght.woff2') format('woff2');
+}
