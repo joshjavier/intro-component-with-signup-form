@@ -54,6 +54,7 @@ Users should be able to:
 
 ### Useful resources
 
+- [A Guide To Accessible Form Validation](https://www.smashingmagazine.com/2023/02/guide-accessible-form-validation/) - This is my main reference for implementing the validation logic.
 - [CSS and JavaScript as first-class citizens in Eleventy](https://pepelsbey.dev/articles/eleventy-css-js/)
 - [Grease 11ty starter](https://github.com/adamstddrd/grease) - I like to think this is what inspired me to learn the inner workings of 11ty. The code structure and implementations of CSS and JS processing in this starter has become one of my primary references when workingo on 11ty projects.
 
